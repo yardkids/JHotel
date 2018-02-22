@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=DatabasePesanan
+comment0.text=\r\n\ Kelas\ ini\ berisi\ mengenai\ Database\ pesanan\ yang\ dilakukan,\ termasuk\r\n\ mengenai\ pesanan\ yang\ akan\ dilakukan\ ataupun\ menghapus\ pesanan\ yang\ sudah\r\n\ ada\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.02.22\r\n
+comment1.params=
+comment1.target=DatabasePesanan()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabasePesanan\r\n
+comment2.params=baru
+comment2.target=boolean\ addPesanan(Pesanan)
+comment3.params=pesan
+comment3.target=boolean\ removePesanan(Pesanan)
+comment4.params=cust
+comment4.target=Pesanan\ getPesanan(Customer)
+comment5.params=
+comment5.target=java.lang.String[]\ getPesananDatabase()
+comment6.params=pesan
+comment6.target=void\ pesananDibatalkan(Pesanan)
+numComments=7
