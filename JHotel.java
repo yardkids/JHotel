@@ -4,7 +4,7 @@
  * Class utama untuk menjalankan JHotel
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.02.22
+ * @version 2018.03.01
  */
 public class JHotel
 {
@@ -19,6 +19,10 @@ public class JHotel
         
     }
     
+    
+    /**
+     *  Method ini digunakan untuk sebagai method utama dalam menjalankan jhotel
+     */
     public static void main(String[] args){
     
     

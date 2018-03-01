@@ -4,7 +4,7 @@
  * customer JHotel yang ada
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.02.22
+ * @version 2018.03.01
  */
 public class Customer
 {
@@ -14,31 +14,52 @@ public class Customer
 
     /**
      * Constructor for objects of class Customer
+     * @param id
+     * @param nama
      */
     public Customer(int id, String nama)
     {
-        // initialise instance variables
-        
+        this.id = id;
+        this.nama = nama;
     }
     
+    /**
+     *  Method ini digunakan untuk menampilkan data ID yang ada
+     *  @return id
+     */
     public int getID(){
-    
-        return 0;
+        return id;
     }
     
+    /**
+     *  Method ini digunakan untuk menampilkan nama yang sudah ditentukan
+     *  @return nama
+     */
     public String getNama(){
-    
-        return null;
+        return nama;
     }
     
+    /**
+     *  Method ini digunakan untuk mengubah koordinat dari id yang ada
+     *  @param id
+     */
     public void setID(int id){
-    
-        
+        this.id = id;
     }
     
+    /**
+     *  Method ini digunakan untuk mengubah koordinat dari nama yang sudah ada
+     *  @param nama
+     */
     public void setNama(String nama){
-    
-        
+        this.nama = nama;
     }
-
+    
+    
+    /**
+     *  Method ini digunakan untuk mencetak data yang ada
+     */
+    public void printData(){
+    
+    }
 }

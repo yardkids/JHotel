@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=JHotel
-comment0.text=\r\n\ Kelas\ ini\ digunakan\ untuk\ memodelkan\ JHotel\ yang\ nantinya\ akan\ menjadi\r\n\ Class\ utama\ untuk\ menjalankan\ JHotel\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.02.22\r\n
+comment0.text=\r\n\ Kelas\ ini\ digunakan\ untuk\ memodelkan\ JHotel\ yang\ nantinya\ akan\ menjadi\r\n\ Class\ utama\ untuk\ menjalankan\ JHotel\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.03.01\r\n
 comment1.params=
 comment1.target=JHotel()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ JHotel\r\n
 comment2.params=args
 comment2.target=void\ main(java.lang.String[])
+comment2.text=\r\n\ \ Method\ ini\ digunakan\ untuk\ sebagai\ method\ utama\ dalam\ menjalankan\ jhotel\r\n
 numComments=3
