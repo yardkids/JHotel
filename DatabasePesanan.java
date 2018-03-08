@@ -5,12 +5,12 @@
  * ada
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.01
+ * @version 2018.03.08
  */
 public class DatabasePesanan
 {
     // instance variables - replace the example below with your own
-    private String[] list_pesanan;
+    private static String[] list_pesanan;
 
     /**
      * Constructor for objects of class DatabasePesanan
@@ -25,7 +25,7 @@ public class DatabasePesanan
      *  Method ini digunakan untuk melakukan penambahan dari Pesanan yang ada
      *  @param baru
      */
-    public boolean addPesanan(Pesanan baru){
+    public static boolean addPesanan(Pesanan baru){
         return false;
     }
     
@@ -33,7 +33,7 @@ public class DatabasePesanan
      *  Method ini digunakan untuk menghapus pesanan dari data yang ada
      *  @param pesan
      */
-    public boolean removePesanan(Pesanan pesan){
+    public static boolean removePesanan(Pesanan pesan){
         return false;
     }
     
@@ -41,14 +41,14 @@ public class DatabasePesanan
      *  Method ini digunakan untuk menampilkan pesanan yang ada dari semua data pesanan
      *  @param cust
      */
-    public Pesanan getPesanan(Customer cust){
+    public static Pesanan getPesanan(Customer cust){
         return null;
     }
     
     /**
      *  Method ini digunakan untuk menampilkan database keseluruhan pesanan
      */
-    public String[] getPesananDatabase(){
+    public static String[] getPesananDatabase(){
         return null;
     }
     
@@ -57,8 +57,8 @@ public class DatabasePesanan
      *  Method ini digunakan untuk melakukan pembatalan pesanan yang sudah dilakukan
      *  @param pesan
      */
-    public void pesananDibatalkan(Pesanan pesan){
-    
+    public static void pesananDibatalkan(Pesanan pesan){
+        
     }
 
 }

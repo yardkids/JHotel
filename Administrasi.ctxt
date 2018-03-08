@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Administrasi
+comment0.text=\r\n\ Kelas\ ini\ merupakan\ kelas\ yang\ digunakan\ untuk\ melakukan\ segala\ kegiatan\ administrasi\ yang\ ada\ di\ JHotel\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.03.08\r\n
+comment1.params=
+comment1.target=Administrasi()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Administrasi\r\n
+comment2.params=pesan\ kamar
+comment2.target=void\ pesananDitugaskan(Pesanan,\ Room)
+comment3.params=pesan\ kamar
+comment3.target=void\ roomAmbilPesanan(Pesanan,\ Room)
+comment4.params=kamar
+comment4.target=void\ roomLepasPesanan(Room)
+comment5.params=kamar
+comment5.target=void\ pesananDibatalkan(Room)
+comment6.params=kamar
+comment6.target=void\ pesananSelesai(Room)
+comment7.params=pesan
+comment7.target=void\ pesananDibatalkan(Pesanan)
+comment8.params=pesan
+comment8.target=void\ pesananSelesai(Pesanan)
+numComments=9

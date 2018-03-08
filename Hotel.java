@@ -4,7 +4,7 @@
  * dan juga lokasi dari hotel yang ada
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.01
+ * @version 2018.03.08
  */
 public class Hotel
 {
@@ -78,6 +78,7 @@ public class Hotel
      *  Method ini digunakan untuk mencetak data yang ada
      */
     public void printData(){
-    
+        //Melakukan print pada nama hotel
+        System.out.println("Nama Hotel: " +nama);
     }
 }

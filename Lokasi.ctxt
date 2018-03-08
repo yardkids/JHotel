@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Lokasi
-comment0.text=\r\n\ Kelas\ ini\ digunakan\ untuk\ mendeskripsikan\ mengenai\ lokasi\ atau\ lebih\ tepatnya\ koordinat\ dari\ sumbu\ x\ dan\ y\r\n\ beserta\ dengan\ deskripsi\ singkat\ mengenai\ lokasi\ yang\ dibuat\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.03.01\r\n
+comment0.text=\r\n\ Kelas\ ini\ digunakan\ untuk\ mendeskripsikan\ mengenai\ lokasi\ atau\ lebih\ tepatnya\ koordinat\ dari\ sumbu\ x\ dan\ y\r\n\ beserta\ dengan\ deskripsi\ singkat\ mengenai\ lokasi\ yang\ dibuat\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.03.08\r\n
 comment1.params=x_coord\ y_coord\ deskripsiLokasi
 comment1.target=Lokasi(float,\ float,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Lokasi\r\n\ @param\ x_coord\r\n\ @param\ y_coord\r\n\ @param\ deskripsiLokasi\r\n

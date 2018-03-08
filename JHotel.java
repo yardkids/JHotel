@@ -4,7 +4,7 @@
  * Class utama untuk menjalankan JHotel
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.01
+ * @version 2018.03.08
  */
 public class JHotel
 {

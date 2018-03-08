@@ -4,12 +4,12 @@
  * dimana mengenai menambahkan dan menghapus data customer yang ada
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.01
+ * @version 2018.03.08
  */
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private String[] list_customer;
+    private static String[] list_customer;
 
     /**
      * Constructor for objects of class DatabaseCustomer
@@ -24,7 +24,7 @@ public class DatabaseCustomer
      *  Method ini digunakan untuk melakukan penambahan data customer yang ada
      *  @param baru
      */
-    public boolean addCustomer(Customer baru){
+    public static boolean addCustomer(Customer baru){
         return false;
     }
     
@@ -40,7 +40,7 @@ public class DatabaseCustomer
     /**
      *  Method ini digunakan untuk menampilkan database dari semua customer
      */
-    public String[] getCustomerDatabase(){
+    public static String[] getCustomerDatabase(){
         return null;
     }
     

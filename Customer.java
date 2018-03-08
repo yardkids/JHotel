@@ -4,7 +4,7 @@
  * customer JHotel yang ada
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.01
+ * @version 2018.03.08
  */
 public class Customer
 {
@@ -60,6 +60,7 @@ public class Customer
      *  Method ini digunakan untuk mencetak data yang ada
      */
     public void printData(){
-    
+        //Melakukan print pada Nama customer
+        System.out.println("Nama Customer:" +nama);
     }
 }

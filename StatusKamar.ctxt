@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=StatusKamar
+comment0.text=\r\n\ Enumeration\ class\ StatusKamar\ -\ write\ a\ description\ of\ the\ enum\ class\ here\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.03.08\r\n
+comment1.params=stat
+comment1.target=StatusKamar(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getStatus()
+numComments=3

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=DatabaseCustomer
-comment0.text=\r\n\ Kelas\ ini\ berisi\ untuk\ memodelkan\ database\ Customer\ yang\ akan\ dimasukan\r\n\ dimana\ mengenai\ menambahkan\ dan\ menghapus\ data\ customer\ yang\ ada\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.03.01\r\n
+comment0.text=\r\n\ Kelas\ ini\ berisi\ untuk\ memodelkan\ database\ Customer\ yang\ akan\ dimasukan\r\n\ dimana\ mengenai\ menambahkan\ dan\ menghapus\ data\ customer\ yang\ ada\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.03.08\r\n
 comment1.params=
 comment1.target=DatabaseCustomer()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseCustomer\r\n

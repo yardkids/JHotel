@@ -4,7 +4,7 @@
  * beserta dengan deskripsi singkat mengenai lokasi yang dibuat
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.01
+ * @version 2018.03.08
  */
 public class Lokasi
 {
@@ -78,6 +78,7 @@ public class Lokasi
      *  Method ini digunakan untuk mencetak data yang ada
      */
     public void printData(){
-    
+        //Melakukan print pada Deskripsi Lokasinya
+        System.out.println("Deskripsi Lokasi:" +deskripsiLokasi);
     }
 }

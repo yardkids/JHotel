@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=TipeKamar
+comment0.text=\r\n\ Enumeration\ class\ TipeKamar\ -\ Untuk\ mendeskripsikan\ tipe\ kamar\ yang\ ada\ pada\r\n\ JHotel\r\n\r\n\ @author\ Anggi\ Harumanto\ -\ 1506673744\r\n\ @version\ 2018.03.08\r\n
+comment1.params=tipe
+comment1.target=TipeKamar(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getType()
+numComments=3

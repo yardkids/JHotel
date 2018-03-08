@@ -6,7 +6,7 @@
  * jenis kamar yang ada, dan juga apakah masih menginap atau tidak
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.01
+ * @version 2018.03.08
  */
 public class Pesanan
 {
@@ -17,6 +17,7 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    public Room kamar;
 
     /**
      * Constructor for objects of class Pesanan
@@ -28,27 +29,7 @@ public class Pesanan
         this.biaya = biaya;
         this.pelanggan = pelanggan;
     }
-    
-    
-    /**
-     *  Method ini digunakan untuk menampilkan nama pelanggan yang ada yang sudah diset baik saat pertama kali masuk
-     *  ataupun saat mengalami perubaha dengan melakukan setNama
-     *  @return nama_pelanggan
-     */
-    public String getNama(String nama_pelanggan){
-        return nama_pelanggan;
-    }
-
-    /**
-     *  Method ini digunakan untuk melakukan set terhadap nama pelanggan yang ada, sehingga nama dapat diubah,
-     *  dan nama yang ada sebelumnya ada akan diubah
-     *  @param nama_pelanggan
-     */
-    public String setNama(String nama_pelanggan){
-        this.nama_pelanggan = nama_pelanggan;
-        return nama_pelanggan;
-    }
-
+   
     /**
      *  Method ini digunakan untuk menampilkan jumlah biaya yang ada yang sudah diset baik saat pertama kali masuk
      *  ataupun saat mengalami perubaha dengan melakukan setBiaya
@@ -82,13 +63,16 @@ public class Pesanan
         return isSelesai;
     }
     
+    public Room getRoom(){
+        return kamar;
+    }
     
     /**
      *  Method ini digunakan untuk mengubah sejumlah biaya yang ada sehingga menjadi biaya yang baru
      *  @param biaya
      */
     public void setBiaya(double Biaya){
-        biaya = Biaya;
+        this.biaya = Biaya;
     }
     
     
@@ -106,7 +90,7 @@ public class Pesanan
      *  @param isDiproses
      */
     public void setStatusDiproses(boolean isDiproses){
-        this.isDiproses = true;
+        this.isDiproses = isDiproses;
     }
     
     
@@ -114,16 +98,25 @@ public class Pesanan
      *  Method ini digunakan untuk mengubah status yang ada menjadi selesai
      *  @param isSelesai
      */
-    public void setStatusSelesai(boolean isDiproses){
-        this.isSelesai = true;
+    public void setStatusSelesai(boolean isSelesai){
+        this.isSelesai = isSelesai;
     }
     
+    
+    /**
+     *  Method ini digunakan untuk mengubah status yang ada menjadi selesai
+     *  @param 
+     */
+    public void setRoom(Room kamar){
+        this.kamar = kamar;
+    }
     
     /**
      *  Method ini digunakan untuk mencetak data yang ada
      *  
      */
     public void printData(){
-    
+        //Melakukan print pada biaya
+        System.out.println("Jumlah Biaya: " + biaya);
     }
 }
