@@ -4,7 +4,7 @@
  * customer JHotel yang ada
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.08
+ * @version 2018.03.10
  */
 public class Customer
 {
@@ -14,8 +14,7 @@ public class Customer
 
     /**
      * Constructor for objects of class Customer
-     * @param id
-     * @param nama
+     * @param id, nama
      */
     public Customer(int id, String nama)
     {
@@ -55,12 +54,13 @@ public class Customer
         this.nama = nama;
     }
     
-    
     /**
      *  Method ini digunakan untuk mencetak data yang ada
      */
     public void printData(){
         //Melakukan print pada Nama customer
-        System.out.println("Nama Customer:" +nama);
+        System.out.println("Customer");
+        System.out.println("ID Customer:" +id);
+        System.out.println("Nama Pelanggan:" +nama);
     }
 }

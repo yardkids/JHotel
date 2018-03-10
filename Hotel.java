@@ -4,7 +4,7 @@
  * dan juga lokasi dari hotel yang ada
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.08
+ * @version 2018.03.10
  */
 public class Hotel
 {
@@ -73,12 +73,14 @@ public class Hotel
         this.bintang = bintang;
     }
     
-    
     /**
      *  Method ini digunakan untuk mencetak data yang ada
      */
     public void printData(){
         //Melakukan print pada nama hotel
+        System.out.println("Hotel");
         System.out.println("Nama Hotel: " +nama);
+        System.out.println("Lokasi: " +lokasi.getDeskripsi());
+        System.out.println("Bintang: " +bintang);
     }
 }

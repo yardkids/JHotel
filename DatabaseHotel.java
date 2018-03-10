@@ -2,8 +2,8 @@
 /**
  * Write a description of class DatabaseHotel here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Anggi Harumanto - 1506673744
+ * @version 2018.03.10
  */
 public class DatabaseHotel
 {
@@ -19,10 +19,18 @@ public class DatabaseHotel
         
     }
     
+    /**
+     *  Method ini digunakan untuk menambahkan hotel baru kedalam database
+     *  @param baru
+     */
     public static boolean addHotel(Hotel baru){
         return false;
     }
     
+    /**
+     *  Method ini digunakan untuk menghapus hotel dari database menggunakan id
+     *  @param ide
+     */
     public static boolean removeHotel(int id){
         return false;
     }

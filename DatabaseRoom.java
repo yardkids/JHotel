@@ -2,8 +2,8 @@
 /**
  * Write a description of class DatabaseRoom here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Anggi Harumanto - 1506673744
+ * @version 2018.03.10
  */
 public class DatabaseRoom
 {
@@ -23,7 +23,7 @@ public class DatabaseRoom
         return false;
     }
     
-    public static boolean rempoveRoom(int id){
+    public static boolean removeRoom(int id){
         return false;
     }
     

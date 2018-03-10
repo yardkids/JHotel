@@ -4,7 +4,7 @@
  * beserta dengan deskripsi singkat mengenai lokasi yang dibuat
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.08
+ * @version 2018.03.10
  */
 public class Lokasi
 {
@@ -79,6 +79,9 @@ public class Lokasi
      */
     public void printData(){
         //Melakukan print pada Deskripsi Lokasinya
+        System.out.println("Lokasi");
+        System.out.println("Koordinat X:" +x_coord);
+        System.out.println("Koordinat Y:" +y_coord);
         System.out.println("Deskripsi Lokasi:" +deskripsiLokasi);
     }
 }

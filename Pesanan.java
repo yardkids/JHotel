@@ -6,7 +6,7 @@
  * jenis kamar yang ada, dan juga apakah masih menginap atau tidak
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.08
+ * @version 2018.03.10
  */
 public class Pesanan
 {
@@ -14,6 +14,7 @@ public class Pesanan
     private double biaya;
     public Customer pelanggan;
     private String nama_pelanggan;
+    public TipeKamar tipe_kamar;
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
@@ -21,8 +22,7 @@ public class Pesanan
 
     /**
      * Constructor for objects of class Pesanan
-     * @param biaya
-     * @param pelanggan
+     * @param biaya, pelanggan
      */
     public Pesanan(double biaya, Customer pelanggan)
     {
@@ -48,6 +48,14 @@ public class Pesanan
     }
     
     /**
+     *  Method ini digunakan untuk menampilkan tipe kamar yang digunakan
+     *  @return tipe_kamar
+     */
+    public TipeKamar getTipeKamar(){
+        return tipe_kamar;
+    }
+    
+    /**
      *  Method ini digunakan untuk menampilkan bahwa status yang ada saat ini merupakan diproses
      *  @return isDiproses
      */
@@ -63,6 +71,10 @@ public class Pesanan
         return isSelesai;
     }
     
+    /**
+     *  Method ini digunakan untuk menampilkan mengenai kamar
+     *  @return kamar
+     */
     public Room getRoom(){
         return kamar;
     }
@@ -78,12 +90,27 @@ public class Pesanan
     
     /**
      *  Method ini digunakan untuk mengubah sejumlah pelanggan yang ada menjadi jumlah pelanggan yang terbaru
-     *  @param baru
+     *  @param pelanggan
      */
-    public void setPelanggan(Customer baru){
-        baru = pelanggan;
+    public void setPelanggan(Customer pelanggan){
+        this.pelanggan = pelanggan;
     }
     
+    /**
+     *  Method ini digunakan untuk mengubah/menambah nama pelanggan
+     *  @param nama_pelanggan
+     */
+    public void setNamaPelanggan(String nama_pelanggan){
+        this.nama_pelanggan = nama_pelanggan;
+    }
+    
+    /**
+     *  Method ini digunakan untuk mengubah/menambah/mengatur tipe kamar yang digunakan
+     *  @param tipe_kamar
+     */
+    public void setTipeKamar(TipeKamar tipe_kamar){
+        this.tipe_kamar = tipe_kamar;
+    }
     
     /**
      *  Method ini digunakan untuk mengubah status yang ada menjadi diproses dan kondisi selesai menjadi tidak benar
@@ -92,7 +119,6 @@ public class Pesanan
     public void setStatusDiproses(boolean isDiproses){
         this.isDiproses = isDiproses;
     }
-    
     
     /**
      *  Method ini digunakan untuk mengubah status yang ada menjadi selesai
@@ -116,7 +142,10 @@ public class Pesanan
      *  
      */
     public void printData(){
-        //Melakukan print pada biaya
-        System.out.println("Jumlah Biaya: " + biaya);
+        //Melakukan print data yang ada
+        System.out.println("Nama Pelanggan: " +pelanggan.getNama());
+        System.out.println("Tipe Kamar: " +tipe_kamar);
+        System.out.println("Status layanan diproses: " +isDiproses);
+        System.out.println("Status layanan selesai: " +isSelesai);
     }
 }
