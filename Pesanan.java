@@ -12,10 +12,8 @@ public class Pesanan
 {
     // instance variables - replace the example below with your own
     private double biaya;
+    private double jumlahHari;
     public Customer pelanggan;
-    private String nama_pelanggan;
-    public TipeKamar tipe_kamar;
-    private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     public Room kamar;
@@ -24,10 +22,12 @@ public class Pesanan
      * Constructor for objects of class Pesanan
      * @param biaya, pelanggan
      */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
-        this.biaya = biaya;
+        this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        biaya = kamar.getDailyTariff() * jumlahHari;
     }
    
     /**
@@ -40,19 +40,19 @@ public class Pesanan
     }
     
     /**
+     *  Method ini digunakan untuk menampilkan jumlah hari yang ada
+     *  @return jumlahHari
+     */
+    public double getJumlahHari(){
+        return jumlahHari;
+    }
+    
+    /**
      *  Method ini digunakan untuk menampilkan daftar pelanggan yang ada
      *  @return pelanggan
      */
     public Customer getPelanggan(){ 
         return pelanggan;
-    }
-    
-    /**
-     *  Method ini digunakan untuk menampilkan tipe kamar yang digunakan
-     *  @return tipe_kamar
-     */
-    public TipeKamar getTipeKamar(){
-        return tipe_kamar;
     }
     
     /**
@@ -83,10 +83,17 @@ public class Pesanan
      *  Method ini digunakan untuk mengubah sejumlah biaya yang ada sehingga menjadi biaya yang baru
      *  @param biaya
      */
-    public void setBiaya(double Biaya){
-        this.biaya = Biaya;
+    public void setBiaya(){
+        biaya = kamar.getDailyTariff() * jumlahHari;
     }
     
+    /**
+     *  Method ini digunakan untuk mengubah jumlah hari yang sudah ada
+     *  @param jumlahHari
+     */
+    public void setJumlahHari(double jumlahHari){
+        this.jumlahHari = jumlahHari;
+    }
     
     /**
      *  Method ini digunakan untuk mengubah sejumlah pelanggan yang ada menjadi jumlah pelanggan yang terbaru
@@ -94,22 +101,6 @@ public class Pesanan
      */
     public void setPelanggan(Customer pelanggan){
         this.pelanggan = pelanggan;
-    }
-    
-    /**
-     *  Method ini digunakan untuk mengubah/menambah nama pelanggan
-     *  @param nama_pelanggan
-     */
-    public void setNamaPelanggan(String nama_pelanggan){
-        this.nama_pelanggan = nama_pelanggan;
-    }
-    
-    /**
-     *  Method ini digunakan untuk mengubah/menambah/mengatur tipe kamar yang digunakan
-     *  @param tipe_kamar
-     */
-    public void setTipeKamar(TipeKamar tipe_kamar){
-        this.tipe_kamar = tipe_kamar;
     }
     
     /**
@@ -144,8 +135,9 @@ public class Pesanan
     public void printData(){
         //Melakukan print data yang ada
         System.out.println("Nama Pelanggan: " +pelanggan.getNama());
-        System.out.println("Tipe Kamar: " +tipe_kamar);
         System.out.println("Status layanan diproses: " +isDiproses);
         System.out.println("Status layanan selesai: " +isSelesai);
+        System.out.println("Pencetakan Jumlah Hari: " +jumlahHari);
+        System.out.println("Pencetakan Biaya: " +biaya);
     }
 }

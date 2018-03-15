@@ -74,7 +74,6 @@ public class Administrasi
         kamar.setPesanan(pesanTemp);
         
         roomLepasPesanan(kamar);
-        
     }
     
     /**
