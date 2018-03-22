@@ -10,7 +10,7 @@
 public class DatabasePesanan
 {
     // instance variables - replace the example below with your own
-    private static String[] list_pesanan;
+    private static Pesanan list_pesanan;
 
     /**
      * Constructor for objects of class DatabasePesanan
@@ -26,6 +26,7 @@ public class DatabasePesanan
      *  @param baru
      */
     public static boolean addPesanan(Pesanan baru){
+        list_pesanan = baru;
         return false;
     }
     
@@ -33,7 +34,8 @@ public class DatabasePesanan
      *  Method ini digunakan untuk menghapus pesanan dari data yang ada
      *  @param pesan
      */
-    public static boolean removePesanan(Pesanan pesan){
+    public static boolean removePesanan(/*Pesanan pesan*/){
+        list_pesanan = null;
         return false;
     }
     

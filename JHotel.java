@@ -24,86 +24,52 @@ public class JHotel
      *  Method ini digunakan untuk sebagai method utama dalam menjalankan jhotel
      */
     public static void main(String[] args){
-        Customer cust1 = new Customer(19, "Rimuru", new GregorianCalendar(2018,06,25).getTime());
+        System.out.print("\u000c");
+        Customer tempest = new Customer();
+        Customer rimuru = new Customer();
+        Customer rimurutempest = new Customer();
         
+        Customer cust1 = new Customer(99, "Rimuru", new GregorianCalendar(1997,06,25).getTime());
+        Pesanan pesanan = new Pesanan();
+
+        DatabasePesanan.addPesanan(pesanan);
         
-        /* System.out.print("\u000c");
-        Lokasi lokasi = new Lokasi(99, 99, "Elite");
-        Hotel hotel = new Hotel("Tempest", lokasi, 5);
-        Room room = new PremiumRoom(hotel, "SD701", true, StatusKamar.Booked);
-        room.setDailyTariff(900000);
-        //Customer customer = new Customer(18, "Rimuru");
-        //Pesanan pesan = new Pesanan(30, customer, room);
+        System.out.println("\n\ntoString kelas Customer untuk kondisi pertama : \n\n");
+        System.out.println(cust1.toString());
+        DatabasePesanan.removePesanan();
+        System.out.println("\n\ntoString kelas Customer untuk kondisi kedua   : \n\n");
+        System.out.println(cust1.toString());
         
-        System.out.println("\n\t\t\tSelamat datang di JHotel\n");
-        lokasi.printData();
-        //customer.printData();
-        hotel.printData();
+        Lokasi lokasi = new Lokasi(101, 101, "Supreme");
+        Hotel hotel = new Hotel("Yggdrasil", lokasi, 5);
+        Room kamar = new SingleRoom(hotel, "RT401", true, StatusKamar.Booked);
+        Pesanan pesan = new Pesanan(7, cust1, kamar, new GregorianCalendar(2018,2,22).getTime());
+
+        kamar.setPesanan(pesan); 
         
-        System.out.println("\n\t=======================Method 1=======================");
-        //Administrasi.pesananDitugaskan(pesan, room);
-        room.printData();
-        //pesan.printData();
+        System.out.println("\n\ntoString kelas Room untuk kondisi pertama : \n\n");
+        System.out.println(kamar.toString());
+        kamar.setStatusAvailable(false);
+        System.out.println("\n\ntoString kelas Room untuk kondisi kedua   : \n\n");
+        System.out.println(kamar.toString());
         
-        if(room instanceof DoubleRoom){
-            System.out.print("\nBenar DoubleRoom\n");
-        }
+        pesan.setStatusDiproses(true);
+        pesan.setStatusSelesai(false);
         
-        else{
-            System.out.print("\nSalah, bukan DoubleRoom\n");
-        }
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi pertama : \n\n");
+        System.out.println(pesan.toString());
+
+        pesan.setStatusDiproses(false);
+        pesan.setStatusSelesai(false);
+
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi kedua   : \n\n");
+        System.out.println(pesan.toString());
         
-        Lokasi lokasi2 = new Lokasi(101, 101, "Supreme");
-        Hotel hotel2 = new Hotel("Iona", lokasi2, 5);
-        Room room2 = new DoubleRoom(hotel2, "I401", true, StatusKamar.Booked);
-        room2.setDailyTariff(1000000);
-        //Customer customer2 = new Customer(21, "Yuuya");
-        //Pesanan pesan2 = new Pesanan(24, customer2, room2);
-        
-        System.out.println("\n\n\t\t\tSelamat datang di JHotel\n");
-        lokasi2.printData();
-        //customer2.printData();
-        hotel2.printData();        
-        
-        System.out.println("\n\t=======================Method 1=======================");
-        //Administrasi.pesananDitugaskan(pesan2, room2);
-        room2.printData();
-        //pesan2.printData();
-        
-        if(room2 instanceof DoubleRoom){
-            System.out.print("\nBenar DoubleRoom\n");
-        }
-        
-        else{
-            System.out.print("\nSalah, bukan DoubleRoom\n");
-        }
-        
-        /*
-        System.out.println("\n\t=======================Method 2=======================");
-        Administrasi.pesananDibatalkan(room);
-        room.printData();
-        pesan.printData();
-        
-        Administrasi.pesananDitugaskan(pesan, room);
-        System.out.println("\n\t=======================Method 3=======================");
-        Administrasi.pesananDibatalkan(pesan);
-        room.printData();
-        pesan.printData();
-        
-        Administrasi.pesananDitugaskan(pesan, room);
-        System.out.println("\n\t=======================Method 4=======================");
-        Administrasi.pesananSelesai(room);
-        room.printData();
-        pesan.printData();
-        
-        Administrasi.pesananDitugaskan(pesan, room);
-        System.out.println("\n\t=======================Method 5=======================");
-        Administrasi.pesananSelesai(pesan);
-        room.printData();
-        pesan.printData();
-        */
-        
-    
+        pesan.setStatusDiproses(false);
+        pesan.setStatusSelesai(true);
+
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi ketiga   : \n\n");
+        System.out.println(pesan.toString());
     }
 
 }

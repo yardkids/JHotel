@@ -1,5 +1,6 @@
 import java.util.Date;
-import java.util.GregorianCalendar;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
@@ -16,19 +17,16 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
-    
-    //private Pattern pattern;
-    //private Matcher matcher;
 
     /**
      * Constructor for objects of class Customer
      * @param id, nama
      */
-    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
+    public Customer(/*int id, String nama, int tanggal, int bulan, int tahun*/)
     {
-        this.id = id;
+        /*this.id = id;
         this.nama = nama;
-        this.dob = new Date(tahun, bulan, tanggal);
+        this.dob = new Date(tahun,bulan,tanggal);*/
     }
     
     public Customer(int id, String nama, Date dob){
@@ -65,8 +63,11 @@ public class Customer
      *  Method ini digunakan untuk menampilkan tanggal lahir yang sudah ditentukan
      *  @return dob
      */
-    public String getDOB(){
-        return null;
+    public Date getDOB(){
+        DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        String reportDate = df.format(dob);
+        System.out.println(reportDate);
+        return dob;
     }
     
     /**
@@ -107,19 +108,21 @@ public class Customer
         this.dob = dob;
     }
     
-    
     public String toString(){
-        return null;
-    }
-    
-    /**
-     *  Method ini digunakan untuk mencetak data yang ada
-     */
-
-    public void printData(){
-        //Melakukan print pada Nama customer
-        System.out.println("Customer");
-        System.out.println("ID Customer:" +id);
-        System.out.println("Nama Pelanggan:" +nama);
+        if(DatabasePesanan.getPesanan(this) != null){
+        return "Customer" +
+               "\nCustomer ID   : " + id +
+               "\nNama          : " + nama +
+               "\nEmail         : " + email +
+               "\nDate of Birth : " + dob +
+               "\nBooking order is in progress";
+        }
+        
+        else{
+        return "Customer" +
+               "\nNama          : " + nama +
+               "\nEmail         : " + email +
+               "\nDate of Birth : " + dob;
+        }
     }
 }

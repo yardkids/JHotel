@@ -127,6 +127,23 @@ public abstract class Room
         this.pesan = pesan;
     }
     
+    public String toString(){
+        if(isAvailable){
+            return  "Nama Hotel     : " + hotel.getNama() +
+                    "\nTipe Kamar   : " + getTipeKamar() +
+                    "\nHarga        : " + dailyTariff +
+                    "Status Kamar   : " + status_kamar;
+        }
+        
+        else{
+            return  "Nama Hotel     : " + hotel.getNama() +
+                    "\nTipe Kamar   : " + getTipeKamar() +
+                    "\nHarga        : " + dailyTariff +
+                    "Status Kamar   : " + status_kamar +
+                    "Pelanggan      : " + pesan.getPelanggan().getNama();
+        }    
+    }
+    
     /**
      *  Method ini digunakan untuk menampilkan/print data dari yang ingin ditampilkan
      *  

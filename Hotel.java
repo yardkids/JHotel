@@ -73,14 +73,10 @@ public class Hotel
         this.bintang = bintang;
     }
     
-    /**
-     *  Method ini digunakan untuk mencetak data yang ada
-     */
-    public void printData(){
-        //Melakukan print pada nama hotel
-        System.out.println("Hotel");
-        System.out.println("Nama Hotel: " +nama);
-        System.out.println("Lokasi: " +lokasi.getDeskripsi());
-        System.out.println("Bintang: " +bintang);
+    public String toString(){
+        return "\nHotel" +
+                "\nNama Hotel : " + nama +
+                "\nLokasi     : " + lokasi.getDeskripsi() +
+                "\nBintang    : " +bintang;
     }
 }

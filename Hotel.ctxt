@@ -23,6 +23,5 @@ comment7.params=bintang
 comment7.target=void\ setBintang(int)
 comment7.text=\r\n\ \ Method\ ini\ digunakan\ untuk\ mengganti\ bintang\ yang\ sudah\ ada\ menjadi\ yang\ baru\r\n\ \ @param\ bintang\r\n
 comment8.params=
-comment8.target=void\ printData()
-comment8.text=\r\n\ \ Method\ ini\ digunakan\ untuk\ mencetak\ data\ yang\ ada\r\n
+comment8.target=java.lang.String\ toString()
 numComments=9

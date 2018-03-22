@@ -22,14 +22,30 @@ public class Pesanan
 
     /**
      * Constructor for objects of class Pesanan
+     * @param jumlahHari, pelanggan, kamar, hari, bulan, tahun
+     */
+    public Pesanan(/*double jumlahHari, Customer pelanggan, Room kamar,
+    int hari, int bulan, int tahun*/)
+    {
+        /*this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        biaya = kamar.getDailyTariff() * jumlahHari;
+        this.tanggalPesan = new Date(tahun, bulan, hari);*/
+    }
+    
+    /**
+     * Constructor for objects of class Pesanan
      * @param biaya, pelanggan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,
+    Date tanggalPesan)
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         biaya = kamar.getDailyTariff() * jumlahHari;
+        this.tanggalPesan = tanggalPesan;
     }
    
     /**
@@ -142,7 +158,23 @@ public class Pesanan
     }
     
     public String toString(){
-        return null;
+        String final_status = "Kosong";
+        
+        if(isDiproses == true && isSelesai == false){
+            final_status = "Diproses";
+        }
+        else if(isDiproses == false && isSelesai == false){
+            final_status = "KOSONG";
+        }
+        else if(isDiproses == false && isSelesai == true){
+            final_status = "SELESAI";
+        }
+        
+        return  "\nDibuat oleh " + pelanggan.getNama() +
+                " Proses booking untuk " + kamar.getHotel() +
+                " Kamar nomor " + kamar.getNomorKamar() +
+                " dengan tipe kamar yang diinginkan " + kamar.getTipeKamar() +
+                " Status " + final_status + ".";
     }
     
     /**

@@ -74,14 +74,10 @@ public class Lokasi
         deskripsiLokasi = deskripsi;
     }
     
-    /**
-     *  Method ini digunakan untuk mencetak data yang ada
-     */
-    public void printData(){
-        //Melakukan print pada Deskripsi Lokasinya
-        System.out.println("Lokasi");
-        System.out.println("Koordinat X:" +x_coord);
-        System.out.println("Koordinat Y:" +y_coord);
-        System.out.println("Deskripsi Lokasi:" +deskripsiLokasi);
+    public String toString(){
+        return "\nLokasi" +
+                "\nKoordinat X:" + x_coord +
+                "\nKoordinat Y:" + y_coord +
+                "\nDeskripsi Lokasi:" +deskripsiLokasi;
     }
 }
