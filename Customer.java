@@ -1,4 +1,7 @@
-
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 /**
  * Kelas ini digunakan sebagai bentuk untuk memodelkan nama dan id dari
  * customer JHotel yang ada
@@ -11,15 +14,27 @@ public class Customer
     // instance variables - replace the example below with your own
     protected int id;
     protected String nama;
+    protected String email;
+    protected Date dob;
+    
+    //private Pattern pattern;
+    //private Matcher matcher;
 
     /**
      * Constructor for objects of class Customer
      * @param id, nama
      */
-    public Customer(int id, String nama)
+    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
     {
         this.id = id;
         this.nama = nama;
+        this.dob = new Date(tahun, bulan, tanggal);
+    }
+    
+    public Customer(int id, String nama, Date dob){
+        this.id = id;
+        this.nama = nama;
+        this.dob = dob;
     }
     
     /**
@@ -36,6 +51,22 @@ public class Customer
      */
     public String getNama(){
         return nama;
+    }
+    
+        /**
+     *  Method ini digunakan untuk menampilkan email yang sudah ditentukan
+     *  @return email
+     */
+    public String getEmail(){
+        return email;
+    }
+    
+        /**
+     *  Method ini digunakan untuk menampilkan tanggal lahir yang sudah ditentukan
+     *  @return dob
+     */
+    public String getDOB(){
+        return null;
     }
     
     /**
@@ -55,8 +86,36 @@ public class Customer
     }
     
     /**
+     *  Method ini digunakan untuk mengubah koordinat dari nama yang sudah ada
+     *  @param email
+     */
+    public void setEmail(String email){
+        String regex = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9][A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.matches()){
+            this.email = email;
+        }
+    }
+    
+    
+    /**
+     *  Method ini digunakan untuk mengubah koordinat dari nama yang sudah ada
+     *  @param dob
+     */
+    public void setDOB(Date dob){
+        this.dob = dob;
+    }
+    
+    
+    public String toString(){
+        return null;
+    }
+    
+    /**
      *  Method ini digunakan untuk mencetak data yang ada
      */
+
     public void printData(){
         //Melakukan print pada Nama customer
         System.out.println("Customer");

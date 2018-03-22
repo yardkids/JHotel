@@ -1,3 +1,4 @@
+import java.util.Date;
 
 /**
  * Class ini digunakan untuk menampilkan/memodelkan suatu
@@ -17,6 +18,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     public Room kamar;
+    public Date tanggalPesan;
 
     /**
      * Constructor for objects of class Pesanan
@@ -80,6 +82,14 @@ public class Pesanan
     }
     
     /**
+     *  Method ini digunakan untuk menampilkan tanggal saat pesanan terjadi
+     *  @param tanggalPesan
+     */
+    public Date getTanggalPesan(){
+        return tanggalPesan;
+    }
+    
+    /**
      *  Method ini digunakan untuk mengubah sejumlah biaya yang ada sehingga menjadi biaya yang baru
      *  @param biaya
      */
@@ -119,13 +129,20 @@ public class Pesanan
         this.isSelesai = isSelesai;
     }
     
-    
     /**
      *  Method ini digunakan untuk mengubah status yang ada menjadi selesai
      *  @param 
      */
     public void setRoom(Room kamar){
         this.kamar = kamar;
+    }
+    
+    public void setTanggalPesan(Date tanggalPesan){
+        this.tanggalPesan = tanggalPesan;
+    }
+    
+    public String toString(){
+        return null;
     }
     
     /**
