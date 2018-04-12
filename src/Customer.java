@@ -109,7 +109,7 @@ public class Customer
     }
     
     public String toString(){
-        if(DatabasePesanan.getPesanan(this) != null){
+        /*if(DatabasePesanan.getPesanan(this) != null){
         return "Customer" +
                "\nCustomer ID   : " + id +
                "\nNama          : " + nama +
@@ -123,6 +123,7 @@ public class Customer
                "\nNama          : " + nama +
                "\nEmail         : " + email +
                "\nDate of Birth : " + dob;
-        }
+        }*/
+        return null;
     }
 }

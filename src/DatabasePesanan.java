@@ -64,6 +64,42 @@ public class DatabasePesanan
         }
         return null;
     }
-    
 
+    public static Pesanan getPesananAktif(Customer pelanggan){
+        for(int i=0;i<PESANAN_DATABASE.size();i++){
+            if(PESANAN_DATABASE.get(i).getPelanggan().equals(pelanggan)){
+                if(PESANAN_DATABASE.get(i).getStatusAktif()){
+                    return PESANAN_DATABASE.get(i);
+                }
+            }
+        }
+        return null;
+    }
+
+    public static boolean removePesanan(Pesanan pesan){
+        for(Pesanan pesanan : PESANAN_DATABASE)
+        {
+            if(pesanan.equals(pesan))
+            {
+                if(pesanan.getRoom() != null)
+                {
+                    Administrasi.pesananDibatalkan(pesanan);
+                }
+                else
+                {
+                    if(pesanan.getStatusAktif())
+                    {
+                        pesanan.setStatusAktif(false);
+                    }
+                }
+
+                if(PESANAN_DATABASE.remove(pesanan))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }

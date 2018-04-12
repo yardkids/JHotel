@@ -25,7 +25,7 @@ public class JHotel
      */
     public static void main(String[] args){
         System.out.print("\u000c");
-        Customer tempest = new Customer();
+        /*Customer tempest = new Customer();
         Customer rimuru = new Customer();
         Customer rimurutempest = new Customer();
         
@@ -71,6 +71,7 @@ public class JHotel
 
         System.out.println("\n\ntoString kelas Pesanan untuk kondisi ketiga   : \n\n");
         System.out.println(pesan.toString());
+        */
     }
 
 }
