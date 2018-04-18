@@ -8,6 +8,7 @@
  */
 public class Hotel
 {
+    private int id;
     private String nama;
     private Lokasi lokasi;
     private int bintang;
@@ -22,8 +23,12 @@ public class Hotel
         this.nama = nama;
         this.lokasi = lokasi;
         this.bintang = bintang;
+        id = DatabaseHotel.getLastHotelID()+1;
     }
-    
+
+    public int getID(){
+        return id;
+    }
     
     /**
      *  Method ini digunakan untuk menampilkan bintang yang diperoleh oleh suatu hotel
@@ -47,6 +52,10 @@ public class Hotel
      */
     public Lokasi getLokasi(){
         return lokasi;
+    }
+
+    public void setID(int id){
+        this.id = id;
     }
     
     /**

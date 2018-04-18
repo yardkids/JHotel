@@ -10,9 +10,8 @@ public abstract class Room
     // instance variables - replace the example below with your own
     public Hotel hotel;
     private String nomor_kamar;
-    protected double dailyTariff;
     public StatusKamar status_kamar;
-    public Pesanan pesan;
+    protected double dailyTariff;
 
     /**
      * Constructor for objects of class Room
@@ -23,7 +22,7 @@ public abstract class Room
         // initialise instance variables
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.status_kamar = status_kamar;
+        this.status_kamar = status_kamar.Vacant;
     }
     
     /**
@@ -62,9 +61,6 @@ public abstract class Room
      *  Method ini digunakan untuk mengambil data pesanan
      *  @return pesan
      */
-    public Pesanan getPesanan(){
-        return pesan;
-    }
     
     public abstract TipeKamar getTipeKamar();
     
@@ -100,16 +96,9 @@ public abstract class Room
         this.status_kamar = status_kamar;
     }
 
-    /**
-     *  Method ini digunakan untuk mengubah mengenai data pesanan
-     *  @param pesan
-     */
-    public void setPesanan(Pesanan pesan){
-        this.pesan = pesan;
-    }
     
     public String toString(){
-        /*if(isAvailable){
+        if(DatabasePesanan.getPesanan(this) == null){
             return  "Nama Hotel   : " + hotel.getNama() +
                     "\nTipe Kamar   : " + getTipeKamar() +
                     "\nHarga        : " + dailyTariff +
@@ -121,8 +110,7 @@ public abstract class Room
                     "\nTipe Kamar   : " + getTipeKamar() +
                     "\nHarga        : " + dailyTariff +
                     "\nStatus Kamar : " + status_kamar +
-                    "\nPelanggan    : " + pesan.getPelanggan().getNama();
-        }*/
-        return null;
+                    "\nPelanggan    : " + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
+        }
     }
 }

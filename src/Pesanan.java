@@ -46,6 +46,7 @@ public class Pesanan
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         this.isAktif = true;
+        id = DatabasePesanan.getLastPesananID()+1;
     }
 
     public int getID(){

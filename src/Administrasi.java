@@ -27,40 +27,44 @@ public class Administrasi
         pesan.setStatusDiproses(true);
         pesan.setRoom(kamar);
 
-        roomAmbilPesanan(pesan,kamar);
+        //roomAmbilPesanan(pesan,kamar);
     }
+
 
     /**
      *  Method ini digunakan untuk menetapkan status ruangan menjadi booked
      *  @param pesan, kamar
      */
+    /*
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar){
         kamar.setStatusKamar(StatusKamar.Booked);
         kamar.setPesanan(pesan);
-    }
+    }*/
 
     /**
      *  Method ini digunakan untuk menetapkan status ruangan menjadi vacant
      *  @param kamar
      */
+    /*
     public static void roomLepasPesanan(Room kamar){
         kamar.setStatusKamar(StatusKamar.Vacant);
         kamar.setPesanan(null);
-    }
+    }*/
 
     /**
      *  Method ini digunakan untuk menetapkan bahwa pesanan yang dilakukan, dibatalkan dan mengubah proses menjadi batal
      *  @param kamar
      */
     public static void pesananDibatalkan(Room kamar){
-        Pesanan pesanTemp = kamar.getPesanan();
-        pesanTemp.setStatusSelesai(false);
-        pesanTemp.setStatusDiproses(false);
-        pesanTemp.setRoom(null);
-        pesanTemp.setStatusAktif(false);
-        kamar.setPesanan(pesanTemp);
-
-        roomLepasPesanan(kamar);
+        //Pesanan pesan = kamar.getPesanan();
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
+        pesan.setStatusAktif(false);
+        //kamar.setPesanan(pesan);
+        kamar.setStatusKamar(StatusKamar.Vacant);
+        //roomLepasPesanan(kamar);
     }
     
     /**
@@ -68,14 +72,15 @@ public class Administrasi
      *  @param kamar
      */
     public static void pesananSelesai(Room kamar){
-        Pesanan pesanTemp = kamar.getPesanan();
-        pesanTemp.setStatusSelesai(true);
-        pesanTemp.setStatusDiproses(false);
-        pesanTemp.setRoom(null);
-        pesanTemp.setStatusAktif(false);
-        kamar.setPesanan(pesanTemp);
-        
-        roomLepasPesanan(kamar);
+        //Pesanan pesan = kamar.getPesanan();
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
+        pesan.setStatusAktif(false);
+        //kamar.setPesanan(pesan);
+        kamar.setStatusKamar(StatusKamar.Vacant);
+        //roomLepasPesanan(kamar);
     }
     
     /**
@@ -83,8 +88,8 @@ public class Administrasi
      *  @param pesan
      */
     public static void pesananDibatalkan(Pesanan pesan){
-        roomLepasPesanan(pesan.getRoom());
-        
+        //roomLepasPesanan(pesan.getRoom());
+        pesan.getRoom().setStatusKamar(StatusKamar.Vacant);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setRoom(null);
@@ -96,8 +101,8 @@ public class Administrasi
      *  @param pesan
      */
     public static void pesananSelesai(Pesanan pesan){
-        roomLepasPesanan(pesan.getRoom());
-        
+        //roomLepasPesanan(pesan.getRoom());
+        pesan.getRoom().setStatusKamar(StatusKamar.Vacant);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setRoom(null);

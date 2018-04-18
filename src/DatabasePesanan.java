@@ -26,7 +26,7 @@ public class DatabasePesanan
         return PESANAN_DATABASE;
     }
 
-    public int getLastPesananID(){
+    public static int getLastPesananID(){
         return LAST_PESANAN_ID;
     }
     /**

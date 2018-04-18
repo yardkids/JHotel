@@ -1,6 +1,7 @@
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
@@ -20,19 +21,19 @@ public class Customer
 
     /**
      * Constructor for objects of class Customer
-     * @param id, nama
+     *
      */
-    public Customer(/*int id, String nama, int tanggal, int bulan, int tahun*/)
+    public Customer(String nama, int tanggal, int bulan, int tahun)
     {
-        /*this.id = id;
         this.nama = nama;
-        this.dob = new Date(tahun,bulan,tanggal);*/
+        this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
+        id = DatabaseCustomer.getLastCustomerID()+1;
     }
     
-    public Customer(int id, String nama, Date dob){
-        this.id = id;
+    public Customer(String nama, Date dob){
         this.nama = nama;
         this.dob = dob;
+        id = DatabaseCustomer.getLastCustomerID()+1;
     }
     
     /**
@@ -109,7 +110,7 @@ public class Customer
     }
     
     public String toString(){
-        /*if(DatabasePesanan.getPesanan(this) != null){
+        if(DatabasePesanan.getPesananAktif(this) != null){
         return "Customer" +
                "\nCustomer ID   : " + id +
                "\nNama          : " + nama +
@@ -123,7 +124,6 @@ public class Customer
                "\nNama          : " + nama +
                "\nEmail         : " + email +
                "\nDate of Birth : " + dob;
-        }*/
-        return null;
+        }
     }
 }
