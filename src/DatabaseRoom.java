@@ -19,61 +19,53 @@ public class DatabaseRoom
     }
 
     public static boolean addRoom(Room baru){
-        for(Room kamar : ROOM_DATABASE)
-        {
-            if(!kamar.getHotel().equals(baru.getHotel()) && !kamar.getNomorKamar().equals(baru.getNomorKamar()))
-            {
-                ROOM_DATABASE.add(baru);
-                return true;
+        for (int i = 0; i < ROOM_DATABASE.size(); i++){
+            if (ROOM_DATABASE.get(i).getHotel().equals(baru.getHotel())&&ROOM_DATABASE.get(i).getNomorKamar()==baru.getNomorKamar()){
+                return false;
             }
         }
-
-        return false;
+        ROOM_DATABASE.add(baru);
+        return true;
     }
 
     public static Room getRoom(Hotel hotel, String nomor_kamar){
-        for(Room kamar : ROOM_DATABASE)
-        {
-            if(kamar.getHotel().equals(hotel) && kamar.getNomorKamar().equals(nomor_kamar))
-            {
-                return kamar;
+        for (int i = 0; i < ROOM_DATABASE.size(); i++) {
+            if (ROOM_DATABASE.get(i).getHotel().equals(hotel)&&ROOM_DATABASE.get(i).getNomorKamar()==nomor_kamar){
+                return ROOM_DATABASE.get(i);
             }
         }
         return null;
     }
 
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel){
-        ArrayList<Room> tempRoom = new ArrayList<Room>();
-        for(Room kamar : ROOM_DATABASE)
-        {
-            if(kamar.getHotel().equals(hotel))
-            {
-                tempRoom.add(kamar);
+        ArrayList<Room> datakamar = new ArrayList<Room>();
+        for (int i = 0; i < ROOM_DATABASE.size(); i++) {
+            if (ROOM_DATABASE.get(i).getHotel().equals(hotel)){
+                datakamar.add(ROOM_DATABASE.get(i));
             }
         }
-
-        return tempRoom;
+        return datakamar;
     }
 
     public static ArrayList<Room> getVacantRooms(){
-        ArrayList<Room> tempRoom = new ArrayList<Room>();
-        for(Room kamar : ROOM_DATABASE)
-        {
-            if(kamar.getStatusKamar().equals(StatusKamar.Vacant))
-            {
-                tempRoom.add(kamar);
+        ArrayList<Room> datakamar = new ArrayList<Room>();
+        for (int i = 0; i < ROOM_DATABASE.size(); i++) {
+            if (ROOM_DATABASE.get(i).getStatusKamar()==StatusKamar.Vacant){
+                datakamar.add(ROOM_DATABASE.get(i));
             }
         }
-        return tempRoom;
+        return datakamar;
     }
 
     public static boolean removeRoom(Hotel hotel, String nomor_kamar){
-        for(Room kamar : ROOM_DATABASE)
-        {
-            if(kamar.getHotel().equals(hotel) && kamar.getNomorKamar().equals(nomor_kamar))
-            {
-                Administrasi.pesananDibatalkan(kamar);
-                if(ROOM_DATABASE.remove(kamar))
+        for (int i = 0; i < ROOM_DATABASE.size(); i++) {
+            if (ROOM_DATABASE.get(i).getHotel().equals(hotel)&&ROOM_DATABASE.get(i).getNomorKamar()==nomor_kamar){
+                if(DatabasePesanan.getPesanan(ROOM_DATABASE.get(i)) != null)
+                {
+                    Administrasi.pesananDibatalkan(ROOM_DATABASE.get(i));
+                }
+
+                if(ROOM_DATABASE.remove(ROOM_DATABASE.get(i)))
                 {
                     return true;
                 }

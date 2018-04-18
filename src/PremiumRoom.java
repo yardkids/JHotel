@@ -13,10 +13,10 @@ public class PremiumRoom extends Room
     /**
      * Constructor for objects of class PremiumRoom
      */
-    public PremiumRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public PremiumRoom(Hotel hotel, String nomor_kamar)
     {
         // initialise instance variables
-        super(hotel, nomor_kamar, status_kamar);
+        super(hotel, nomor_kamar);
     }
     
     public TipeKamar getTipeKamar(){

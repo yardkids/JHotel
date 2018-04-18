@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Class ini digunakan untuk menampilkan/memodelkan suatu
@@ -21,20 +22,6 @@ public class Pesanan
     private boolean isSelesai;
     public Room kamar;
     public Date tanggalPesan;
-
-    /**
-     * Constructor for objects of class Pesanan
-     *
-     */
-    public Pesanan(/*double jumlahHari, Customer pelanggan, Room kamar,
-    int hari, int bulan, int tahun*/)
-    {
-        /*this.jumlahHari = jumlahHari;
-        this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        biaya = kamar.getDailyTariff() * jumlahHari;
-        this.tanggalPesan = new Date(tahun, bulan, hari);*/
-    }
     
     /**
      * Constructor for objects of class Pesanan
@@ -44,9 +31,10 @@ public class Pesanan
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        this.isAktif = true;
-        id = DatabasePesanan.getLastPesananID()+1;
+        isAktif = true;
+        tanggalPesan = new GregorianCalendar().getTime();
+        biaya = kamar.getDailyTariff() * jumlahHari;
+        id = DatabasePesanan.getLastPesananID() + 1;
     }
 
     public int getID(){
@@ -188,7 +176,7 @@ public class Pesanan
         }
         
         return  "Dibuat oleh " + pelanggan.getNama() +
-                " Proses booking untuk " + kamar.getHotel() +
+                " Proses booking untuk" + kamar.getHotel() +
                 " \nKamar nomor " + kamar.getNomorKamar() +
                 " dengan tipe kamar yang diinginkan " + kamar.getTipeKamar() +
                 " Status " + final_status + ".";

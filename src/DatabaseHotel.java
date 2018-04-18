@@ -9,17 +9,8 @@ import java.util.ArrayList;
 public class DatabaseHotel
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<>();
+    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
     private static int LAST_HOTEL_ID = 0;
-
-    /**
-     * Constructor for objects of class DatabaseHotel
-     */
-    public DatabaseHotel()
-    {
-        // initialise instance variables
-        
-    }
 
     public static ArrayList<Hotel> getHotelDatabase(){
         return HOTEL_DATABASE;

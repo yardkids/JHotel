@@ -10,17 +10,8 @@ import java.util.ArrayList;
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
     private static int LAST_CUSTOMER_ID = 0;
-
-    /**
-     * Constructor for objects of class DatabaseCustomer
-     */
-    public DatabaseCustomer()
-    {
-        // initialise instance variables
-        
-    }
 
     /**
      *  Method ini digunakan untuk menampilkan database dari semua customer
@@ -45,8 +36,8 @@ public class DatabaseCustomer
                 return false;
             }
         }
-        LAST_CUSTOMER_ID = baru.getID();
         CUSTOMER_DATABASE.add(baru);
+        LAST_CUSTOMER_ID = baru.getID();
         return true;
     }
 
