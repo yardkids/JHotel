@@ -24,10 +24,10 @@ public class DatabasePesanan
      *  Method ini digunakan untuk melakukan penambahan dari Pesanan yang ada
      *  @param baru
      */
-    public static boolean addPesanan(Pesanan baru){
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException{
         for (int i = 0; i < PESANAN_DATABASE.size(); i++) {
             if (PESANAN_DATABASE.get(i).getStatusAktif()==true&&PESANAN_DATABASE.get(i).getID()==baru.getID()){
-                return false;
+                throw new PesananSudahAdaException(baru);
             }
         }
         LAST_PESANAN_ID=baru.getID();
@@ -66,9 +66,9 @@ public class DatabasePesanan
         return null;
     }
 
-    public static boolean removePesanan(Pesanan pesan){
+    public static boolean removePesanan(Customer cust) throws PesananTidakDitemukanException{
         for (int i = 0; i < PESANAN_DATABASE.size(); i++) {
-            if (PESANAN_DATABASE.get(i).equals(pesan)){
+            if (PESANAN_DATABASE.get(i).equals(cust)){
                 if(PESANAN_DATABASE.get(i).getRoom() != null){
                     Administrasi.pesananDibatalkan(PESANAN_DATABASE.get(i));
                 }
@@ -83,6 +83,6 @@ public class DatabasePesanan
                 }
             }
         }
-        return false;
+        throw new PesananTidakDitemukanException(cust);
     }
 }

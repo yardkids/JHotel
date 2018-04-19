@@ -24,12 +24,12 @@ public class DatabaseHotel
      *  Method ini digunakan untuk menambahkan hotel baru kedalam database
      *  @param baru
      */
-    public static boolean addHotel(Hotel baru){
+    public static boolean addHotel(Hotel baru) throws HotelSudahAdaException{
         for(Hotel hotel: HOTEL_DATABASE)
         {
-            if(hotel.getID() == baru.getID())
+            if(hotel.getID() == baru.getID()||(hotel.getNama()== baru.getNama()&&hotel.getLokasi() == baru.getLokasi()))
             {
-                return false;
+                throw new HotelSudahAdaException(baru);
             }
         }
         LAST_HOTEL_ID = baru.getID();
@@ -52,7 +52,7 @@ public class DatabaseHotel
      *  Method ini digunakan untuk menghapus hotel dari database menggunakan id
      *  @param id
      */
-    public static boolean removeHotel(int id){
+    public static boolean removeHotel(int id) throws HotelTidakDitemukanException{
         for(Hotel hotel: HOTEL_DATABASE)
         {
             if(hotel.getID() == id)
@@ -60,7 +60,13 @@ public class DatabaseHotel
                 ArrayList<Room> kamar_size = DatabaseRoom.getRoomsFromHotel(hotel);
                 for (int x = 0; x < kamar_size.size(); x++){
                     Room kamar = kamar_size.get(x);
-                    DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                    try {
+                        DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                    }
+                    catch(RoomTidakDitemukanException except){
+                        System.out.println(except.getPesan());
+                    }
+
                 }
                 if(HOTEL_DATABASE.remove(hotel))
                 {
@@ -68,7 +74,7 @@ public class DatabaseHotel
                 }
             }
         }
-        return false;
+        throw new HotelTidakDitemukanException(id);
     }
     
 

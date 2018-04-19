@@ -23,16 +23,18 @@ public class Customer
      * Constructor for objects of class Customer
      *
      */
-    public Customer(String nama, int tanggal, int bulan, int tahun)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email)
     {
         this.nama = nama;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
+        this.email = email;
         id = DatabaseCustomer.getLastCustomerID()+1;
     }
     
-    public Customer(String nama, Date dob){
+    public Customer(String nama, Date dob, String Email){
         this.nama = nama;
         this.dob = dob;
+        this.email = email;
         id = DatabaseCustomer.getLastCustomerID()+1;
     }
     

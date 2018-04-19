@@ -33,7 +33,7 @@ public class Pesanan
         this.pelanggan = pelanggan;
         isAktif = true;
         tanggalPesan = new GregorianCalendar().getTime();
-        biaya = kamar.getDailyTariff() * jumlahHari;
+        //biaya = kamar.getDailyTariff() * jumlahHari;
         id = DatabasePesanan.getLastPesananID() + 1;
     }
 
@@ -174,11 +174,22 @@ public class Pesanan
         else if(isDiproses == false && isSelesai == true){
             final_status = "SELESAI";
         }
-        
-        return  "Dibuat oleh " + pelanggan.getNama() +
-                " Proses booking untuk" + kamar.getHotel() +
-                " \nKamar nomor " + kamar.getNomorKamar() +
-                " dengan tipe kamar yang diinginkan " + kamar.getTipeKamar() +
-                " Status " + final_status + ".";
+
+        if (kamar!=null) {
+            return "\n Pesanan" +
+                    "\n Pelanggan   = " + pelanggan.getNama() +
+                    "\n Jumlah Hari = " + jumlahHari +
+                    "\n Hotel       = " + kamar.getHotel().getNama() +
+                    "\n Kamar       = " + kamar.getNomorKamar() +
+                    "\n Tipe Kamar  = " + kamar.getTipeKamar() +
+                    "\n Status      = " + final_status;
+        }
+        return "\n Pesanan" +
+                "\n Pelanggan   = " + pelanggan.getNama() +
+                "\n Jumlah Hari = " + jumlahHari +
+                "\n Hotel       = NULL" +
+                "\n Kamar       = NULL" +
+                "\n Tipe Kamar  = NULL" +
+                "\n Status      = " + final_status;
     }
 }

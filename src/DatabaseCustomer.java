@@ -28,12 +28,12 @@ public class DatabaseCustomer
      *  Method ini digunakan untuk melakukan penambahan data customer yang ada
      *  @param baru
      */
-    public static boolean addCustomer(Customer baru){
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException{
         for(Customer cust: CUSTOMER_DATABASE)
         {
-            if(cust.getID() == baru.getID())
+            if(cust.getEmail() == baru.getEmail()||cust.getID() == baru.getID())
             {
-                return false;
+                throw new PelangganSudahAdaException(baru);
             }
         }
         CUSTOMER_DATABASE.add(baru);
@@ -56,20 +56,25 @@ public class DatabaseCustomer
      *  Method ini digunakan untuk menghapus data customer yang ada
      *  @param id
      */
-    public boolean removeCustomer(int id){
-        for(Customer cust: CUSTOMER_DATABASE)
-        {
-            if(cust.getID() == id)
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException{
+            for(Customer cust: CUSTOMER_DATABASE)
             {
-                Pesanan pesan = DatabasePesanan.getPesananAktif(cust);
-                DatabasePesanan.removePesanan(pesan);
-                if(CUSTOMER_DATABASE.remove(cust))
+                if(cust.getID() == id)
                 {
-                    return true;
+                    Pesanan pesan = DatabasePesanan.getPesananAktif(cust);
+                    try {
+                        DatabasePesanan.removePesanan(cust);
+                    }
+                    catch (PesananTidakDitemukanException except){
+                        System.out.println(except.getPesan());
+                    }
+                    if(CUSTOMER_DATABASE.remove(cust))
+                    {
+                        return true;
+                    }
                 }
             }
-        }
-        return false;
+        throw new PelangganTidakDitemukanException(id);
     }
     
 }
