@@ -153,7 +153,7 @@ public class JHotel
             System.out.println(sendiri);
         }
 
-        System.out.println("Data PESANAN biasa");
+        System.out.println("\nData PESANAN biasa");
         System.out.println(DatabasePesanan.getPesananDatabase());
 
         Administrasi.pesananDitugaskan(pesan1, berac);
@@ -161,10 +161,10 @@ public class JHotel
         Administrasi.pesananDitugaskan(pesan3, luas);
         Administrasi.pesananDitugaskan(pesan4, sendiri);
 
-        System.out.println("Data PESANAN DITUGASKAN");
+        System.out.println("\nData PESANAN DITUGASKAN");
         System.out.println(DatabasePesanan.getPesananDatabase());
 
-        System.out.println("Data PESANAN SELESAI dan DIBATALKAN");
+        System.out.println("\nData PESANAN SELESAI dan DIBATALKAN");
         Administrasi.pesananSelesai(pesan1);
         Administrasi.pesananSelesai(pesan2);
         Administrasi.pesananDibatalkan(pesan3);

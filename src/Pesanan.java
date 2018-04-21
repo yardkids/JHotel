@@ -176,20 +176,13 @@ public class Pesanan
         }
 
         if (kamar!=null) {
-            return "\n Pesanan" +
-                    "\n Pelanggan   = " + pelanggan.getNama() +
-                    "\n Jumlah Hari = " + jumlahHari +
-                    "\n Hotel       = " + kamar.getHotel().getNama() +
-                    "\n Kamar       = " + kamar.getNomorKamar() +
-                    "\n Tipe Kamar  = " + kamar.getTipeKamar() +
-                    "\n Status      = " + final_status;
+            return "\n\nDibuat oleh : " + pelanggan.getNama() +
+                    "\nProses booking untuk " +kamar.getHotel() +
+                    "\nKamar nomor " +kamar.getNomorKamar() +
+                    " dengan tipe kamar yang diinginkan " + kamar.getTipeKamar() +
+                    "\nStatus : " +final_status;
         }
-        return "\n Pesanan" +
-                "\n Pelanggan   = " + pelanggan.getNama() +
-                "\n Jumlah Hari = " + jumlahHari +
-                "\n Hotel       = NULL" +
-                "\n Kamar       = NULL" +
-                "\n Tipe Kamar  = NULL" +
-                "\n Status      = " + final_status;
+        return "\nDibuat oleh : " + pelanggan.getNama() +
+                "\nStatus : " +final_status;
     }
 }
