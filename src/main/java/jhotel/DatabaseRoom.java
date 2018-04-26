@@ -31,7 +31,7 @@ public class DatabaseRoom
 
     public static Room getRoom(Hotel hotel, String nomor_kamar){
         for (int i = 0; i < ROOM_DATABASE.size(); i++) {
-            if (ROOM_DATABASE.get(i).getHotel().equals(hotel)&&ROOM_DATABASE.get(i).getNomorKamar()==nomor_kamar){
+            if (ROOM_DATABASE.get(i).getHotel().equals(hotel)&&ROOM_DATABASE.get(i).getNomorKamar().equals(nomor_kamar)){
                 return ROOM_DATABASE.get(i);
             }
         }
@@ -51,7 +51,7 @@ public class DatabaseRoom
     public static ArrayList<Room> getVacantRooms(){
         ArrayList<Room> datakamar = new ArrayList<Room>();
         for (int i = 0; i < ROOM_DATABASE.size(); i++) {
-            if (ROOM_DATABASE.get(i).getStatusKamar()==StatusKamar.Vacant){
+            if (ROOM_DATABASE.get(i).getStatusKamar().equals(StatusKamar.Vacant)){
                 datakamar.add(ROOM_DATABASE.get(i));
             }
         }
@@ -60,8 +60,8 @@ public class DatabaseRoom
 
     public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException{
         for (int i = 0; i < ROOM_DATABASE.size(); i++) {
-            if (ROOM_DATABASE.get(i).getHotel().equals(hotel)&&ROOM_DATABASE.get(i).getNomorKamar()==nomor_kamar){
-                if(DatabasePesanan.getPesanan(ROOM_DATABASE.get(i)) != null)
+            if (ROOM_DATABASE.get(i).getHotel().equals(hotel)&&ROOM_DATABASE.get(i).getNomorKamar().equals(nomor_kamar)){
+                if(DatabasePesanan.getPesananAktif(ROOM_DATABASE.get(i)) != null)
                 {
                     Administrasi.pesananDibatalkan(ROOM_DATABASE.get(i));
                 }

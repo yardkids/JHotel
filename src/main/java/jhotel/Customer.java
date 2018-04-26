@@ -15,27 +15,30 @@ import java.util.regex.Pattern;
 public class Customer
 {
     // instance variables - replace the example below with your own
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
 
     /**
      * Constructor for objects of class Customer
      *
      */
-    public Customer(String nama, int tanggal, int bulan, int tahun, String email)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password)
     {
         this.nama = nama;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
         this.email = email;
+        this.password = password;
         id = DatabaseCustomer.getLastCustomerID()+1;
     }
     
-    public Customer(String nama, Date dob, String Email){
+    public Customer(String nama, Date dob, String Email, String password){
         this.nama = nama;
         this.dob = dob;
         this.email = email;
+        this.password = password;
         id = DatabaseCustomer.getLastCustomerID()+1;
     }
     
@@ -72,6 +75,10 @@ public class Customer
         String reportDate = df.format(dob);
         System.out.println(reportDate);
         return dob;
+    }
+
+    public String getPassword(){
+        return password;
     }
     
     /**
@@ -110,6 +117,10 @@ public class Customer
      */
     public void setDOB(Date dob){
         this.dob = dob;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
     
     public String toString(){
