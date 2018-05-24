@@ -1,10 +1,11 @@
 package jhotel;
 
 /**
- * Kelas ini merupakan gambaran ruangan secara keseluruhan
+ * Kelas ini digunakan untuk mengatur semua yang berhubung dengan kamar
+ * baik itu pembuatan kamar serta penentuan status kamar
  *
  * @author Anggi Harumanto -1506673744
- * @version 2018.03.10
+ * @version 2018.05.24
  */
 public abstract class Room
 {
@@ -27,7 +28,7 @@ public abstract class Room
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan hotel yang ada saat ini
+     *  Method ini digunakan untuk mengambil nilai nama variable hotel yang ada
      *  @return hotel
      */
     public Hotel getHotel(){
@@ -35,7 +36,7 @@ public abstract class Room
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan nomor kamar yang ada
+     *  Method ini digunakan untuk mengambil nomor kamar yang ada
      *  @return nomor_kamar
      */
     public String getNomorKamar(){
@@ -43,15 +44,15 @@ public abstract class Room
     }
 
     /**
-     *  Method ini digunakan untuk menampilkan daily tariff yang ada
-     *  
+     *  Method ini digunakan untuk mengambil nilai daily tariff yang ada
+     * @return dailyTariff
      */
     public double getDailyTariff(){
         return dailyTariff;
     }
 
     /**
-     *  Method ini digunakan untuk menampilkan status kamar saat ini, apakah booked, processed atau kosong
+     *  Method ini digunakan untuk mengambil nilai status kamar saat ini, apakah booked, processed atau kosong
      *  @return status_kamar
      */
     public StatusKamar getStatusKamar(){
@@ -59,14 +60,14 @@ public abstract class Room
     }
 
     /**
-     *  Method ini digunakan untuk mengambil data pesanan
-     *  @return pesan
+     *  Method ini merupakan abstract method untuk mengambil data tipe kamar
+     *
      */
     
     public abstract TipeKamar getTipeKamar();
     
     /**
-     *  Method ini digunakan untuk mengubah/menambah hotel yang ada
+     *  Method ini digunakan untuk menentukan hotel
      *  @param hotel
      */
     public void setHotel(Hotel hotel){
@@ -74,7 +75,7 @@ public abstract class Room
     }
     
     /**
-     *  Method ini digunakan untuk mengubah atau mengganti nomor_kamar
+     *  Method ini digunakan untuk menentukan nilai nomor kamar
      *  @param nomor_kamar
      */
     public void setNomorKamar(String nomor_kamar){
@@ -97,7 +98,10 @@ public abstract class Room
         this.status_kamar = status_kamar;
     }
 
-    
+    /**
+     * Method ini digunakan untuk menampilkan string untuk informasi seputar pada kelas Room
+     *
+     */
     public String toString(){
         if(DatabasePesanan.getPesananAktif(this) == null){
             return  "\nNama Hotel   : " + hotel.getNama() +

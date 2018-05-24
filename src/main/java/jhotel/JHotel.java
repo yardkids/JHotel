@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Class utama untuk menjalankan JHotel
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.08
+ * @version 2018.05.24
  */
 public class JHotel
 {
@@ -31,17 +31,18 @@ public class JHotel
     public static void main(String[] args) throws PelangganSudahAdaException, PelangganTidakDitemukanException, PesananSudahAdaException,
         HotelSudahAdaException, HotelTidakDitemukanException, RoomSudahAdaException, RoomTidakDitemukanException{
 
-        SpringApplication.run(JHotel.class, args);
+        Lokasi artenheim = new Lokasi(99, 99, "Artenheim");
 
-        Lokasi jakarta = new Lokasi(99, 99, "Jakarta");
-        Lokasi bandung = new Lokasi(80, 80, "Bandung");
-
-        DatabaseHotel.addHotel(new Hotel("Melati", jakarta, 10));
-        DatabaseHotel.addHotel(new Hotel("Mawar", bandung, 8));
+        DatabaseHotel.addHotel(new Hotel("Yggdrasil", artenheim, 10));
 
         DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "IO401"));
         DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "YT404"));
-        DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(2), "ZT707"));
+        DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(1), "ZT707"));
+        DatabaseRoom.getRoomDatabase().get(0).setDailyTariff(500000);
+        DatabaseRoom.getRoomDatabase().get(1).setDailyTariff(750000);
+        DatabaseRoom.getRoomDatabase().get(2).setDailyTariff(1200000);
+
+        SpringApplication.run(JHotel.class, args);
 
     }
 

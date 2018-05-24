@@ -6,11 +6,10 @@ import java.util.GregorianCalendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
- * Kelas ini digunakan sebagai bentuk untuk memodelkan nama dan id dari
- * customer JHotel yang ada
+ * Kelas ini digunakan sebagai bentuk untuk memodelkan customer
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.10
+ * @version 2018.05.24
  */
 public class Customer
 {
@@ -22,8 +21,13 @@ public class Customer
     private String password;
 
     /**
-     * Constructor for objects of class Customer
-     *
+     * Method ini merupakan konstruktor kelas
+     * @param nama
+     * @param tanggal
+     * @param bulan
+     * @param tahun
+     * @param email
+     * @param password
      */
     public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password)
     {
@@ -33,7 +37,14 @@ public class Customer
         this.password = password;
         id = DatabaseCustomer.getLastCustomerID()+1;
     }
-    
+
+    /**
+     * Methdo ini merupakan masih dalam kesatuan
+     * @param nama
+     * @param dob
+     * @param Email
+     * @param password
+     */
     public Customer(String nama, Date dob, String Email, String password){
         this.nama = nama;
         this.dob = dob;
@@ -43,7 +54,7 @@ public class Customer
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan data ID yang ada
+     *  Method ini digunakan untuk mengambil nilai data ID yang ada
      *  @return id
      */
     public int getID(){
@@ -51,7 +62,7 @@ public class Customer
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan nama yang sudah ditentukan
+     *  Method ini digunakan untuk mengambil nama yang sudah ditentukan
      *  @return nama
      */
     public String getNama(){
@@ -59,7 +70,7 @@ public class Customer
     }
     
         /**
-     *  Method ini digunakan untuk menampilkan email yang sudah ditentukan
+     *  Method ini digunakan untuk mengambil nilai email yang sudah ditentukan
      *  @return email
      */
     public String getEmail(){
@@ -67,7 +78,7 @@ public class Customer
     }
     
         /**
-     *  Method ini digunakan untuk menampilkan tanggal lahir yang sudah ditentukan
+     *  Method ini digunakan untuk mengambil tanggal lahir yang sudah ditentukan
      *  @return dob
      */
     public Date getDOB(){
@@ -77,12 +88,16 @@ public class Customer
         return dob;
     }
 
+    /**
+     * Method ini digunakan untuk menentukan password bagi user
+     * @return password
+     */
     public String getPassword(){
         return password;
     }
     
     /**
-     *  Method ini digunakan untuk mengubah koordinat dari id yang ada
+     *  Method ini digunakan untuk menentukan nilai id yang akan diberikan
      *  @param id
      */
     public void setID(int id){
@@ -90,7 +105,7 @@ public class Customer
     }
     
     /**
-     *  Method ini digunakan untuk mengubah koordinat dari nama yang sudah ada
+     *  Method ini digunakan untuk menentukan nama yang sudah ada
      *  @param nama
      */
     public void setNama(String nama){
@@ -98,7 +113,7 @@ public class Customer
     }
     
     /**
-     *  Method ini digunakan untuk mengubah koordinat dari nama yang sudah ada
+     *  Method ini digunakan untuk menentukan regex dalam presentasi
      *  @param email
      */
     public void setEmail(String email){

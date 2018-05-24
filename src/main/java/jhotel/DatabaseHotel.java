@@ -2,10 +2,12 @@ package jhotel;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabaseHotel here.
+ * Kelas ini digunakan untuk memodelkan terkait penyimpanan
+ * data hotel, serta dapat melakukan penambahan dan pengecekan
+ * Hotel
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.10
+ * @version 2018.05.24
  */
 public class DatabaseHotel
 {
@@ -13,10 +15,18 @@ public class DatabaseHotel
     private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
     private static int LAST_HOTEL_ID = 0;
 
+    /**
+     * Method yang digunakan untuk mengambil semua data dari database untuk dikontrol
+     * @return
+     */
     public static ArrayList<Hotel> getHotelDatabase(){
         return HOTEL_DATABASE;
     }
 
+    /**
+     * Method yang digunakan untuk mengambil nilai dari last hotel id yang ada
+     * @return
+     */
     public static int getLastHotelID(){
         return LAST_HOTEL_ID;
     }
@@ -38,6 +48,10 @@ public class DatabaseHotel
         return true;
     }
 
+    /**
+     * Method ini digunakan untuk mengambil hotel berdasarkan pada id yang diberikan
+     * @param id
+     */
     public static Hotel getHotel(int id){
         for(Hotel hotel: HOTEL_DATABASE)
         {

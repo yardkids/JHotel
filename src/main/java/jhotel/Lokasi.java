@@ -4,7 +4,7 @@ package jhotel;
  * beserta dengan deskripsi singkat mengenai lokasi yang dibuat
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.10
+ * @version 2018.05.24
  */
 public class Lokasi
 {
@@ -27,7 +27,7 @@ public class Lokasi
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan koordinat x yang sudah ada
+     *  Method ini digunakan untuk mengambil nilai koordinat x yang sudah ada
      *  @return x_coord
      */
     public float getX(){
@@ -35,7 +35,7 @@ public class Lokasi
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan koordinat y yang sudah ada
+     *  Method ini digunakan untuk mengambil nilai koordinat y yang sudah ada
      *  @return y_coord
      */
     public float getY(){
@@ -43,7 +43,7 @@ public class Lokasi
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan deskripsi lokasi yang sudah ditentukan
+     *  Method ini digunakan untuk mengambil deskrip dari lokasi
      *  @return deskripsiLokasi
      */
     public String getDeskripsi(){
@@ -51,7 +51,7 @@ public class Lokasi
     }
     
     /**
-     *  Method ini digunakan untuk mengubah koordinat dari nilai x
+     *  Method ini digunakan untuk menentukan koordinat dari nilai x
      *  @param x_coord
      */
     public void setX(float x_coord){
@@ -59,7 +59,7 @@ public class Lokasi
     }
     
     /**
-     *  Method ini digunakan untuk mengubah koordinat dari nilai y
+     *  Method ini digunakan untuk menentukan koordinat dari nilai y
      *  @param y_coord
      */
     public void setY(float y_coord){
@@ -67,13 +67,17 @@ public class Lokasi
     }
     
     /**
-     *  Method ini digunakan untuk mengubah koordinat dari nilai deskripsi lokasi
-     *  @param deskripsiLokasi
+     *  Method ini digunakan untuk menentukan deskripsi lokasi hotel
+     *  @param deskripsi
      */
     public void setDeskripsi(String deskripsi){
         deskripsiLokasi = deskripsi;
     }
-    
+
+    /**
+     * Method ini digunakan untuk mencetak pesan kelas Lokasi
+     *
+     */
     public String toString(){
         return "\nLokasi" +
                 "\nKoordinat X:" + x_coord +

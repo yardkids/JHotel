@@ -1,10 +1,10 @@
 package jhotel;
 
 /**
- * Write a description of class SingleRoom here.
+ * Kelas ini digunakan untuk memodelkan tipe kamar single
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.15
+ * @version 2018.05.24
  */
 public class SingleRoom extends Room
 {
@@ -14,6 +14,7 @@ public class SingleRoom extends Room
     
     /**
      * Constructor for objects of class SingleRoom
+     * @Params hotel, nomor_kamar
      */
     public SingleRoom(Hotel hotel, String nomor_kamar)
     {
@@ -21,7 +22,11 @@ public class SingleRoom extends Room
         super(hotel, nomor_kamar);
         
     }
-    
+
+    /**
+     *  Method ini digunakan untuk mendapatkan nilai tipe kamar
+     *  @return TIPE_KAMAR
+     */
     public TipeKamar getTipeKamar(){
         return TIPE_KAMAR;
     }

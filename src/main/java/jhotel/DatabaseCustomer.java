@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * dimana mengenai menambahkan dan menghapus data customer yang ada
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.10
+ * @version 2018.05.24
  */
 public class DatabaseCustomer
 {
@@ -42,6 +42,10 @@ public class DatabaseCustomer
         return true;
     }
 
+    /**
+     * Method ini digunakan untuk mengambil data customer berdasarkan pada id
+     * @param id
+     */
     public static Customer getCustomer(int id){
         for(Customer cust: CUSTOMER_DATABASE)
         {
@@ -53,6 +57,11 @@ public class DatabaseCustomer
         return null;
     }
 
+    /**
+     * Method yang digunakan untuk melakukan login bagi pelanggan
+     * @param email
+     * @param password
+     */
     public static Customer getCustomerLogin(String email, String password){
         for(Customer cust: CUSTOMER_DATABASE){
             if(cust.getEmail().equals(email)&&cust.getPassword().equals(password)){

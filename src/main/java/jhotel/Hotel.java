@@ -1,7 +1,7 @@
 package jhotel;
 /**
- * Kelas ini merupakan class yang digunakan untuk memperlihatkan nama dari hotel yang ada beserta popularitasnya
- * dan juga lokasi dari hotel yang ada
+ * Kelas ini merupakan class yang digunakan untuk memodelkan hotel yang ada
+ * baik itu untuk pembuatan awal hotel, hingga pengaturan informasi didalamnya
  *
  * @author Anggi Harumanto - 1506673744
  * @version 2018.03.10
@@ -12,6 +12,7 @@ public class Hotel
     private String nama;
     private Lokasi lokasi;
     private int bintang;
+
     /**
      * Constructor for objects of class Hotel
      * @param nama
@@ -26,12 +27,16 @@ public class Hotel
         id = DatabaseHotel.getLastHotelID()+1;
     }
 
+    /**
+     * Method ini digunakan untuk mengambil nilai id Hotel
+     * @return id
+     */
     public int getID(){
         return id;
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan bintang yang diperoleh oleh suatu hotel
+     *  Method ini digunakan untuk mengambil nilai bintang yang diberikan
      *  @return bintang
      */
     public int getBintang(){
@@ -39,7 +44,7 @@ public class Hotel
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan nama dari hotel yang ada
+     *  Method ini digunakan untuk mengambil nama hotel
      *  @return nama
      */
     public String getNama(){
@@ -47,19 +52,23 @@ public class Hotel
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan lokasi dari hotel yang ada
+     *  Method ini digunakan untuk mengambil lokasi yang menjadi dasar hotel
      *  @return lokasi
      */
     public Lokasi getLokasi(){
         return lokasi;
     }
 
+    /**
+     * Method ini digunakan untuk menetapkan nilai id
+     * @param id
+     */
     public void setID(int id){
         this.id = id;
     }
     
     /**
-     *  Method ini digunakan untuk mengganti atau mengubah nama dari hotel yang ada
+     *  Method ini digunakan untuk menetapkan nama hotel
      *  @param nama
      */
     public void setNama(String nama){
@@ -67,7 +76,7 @@ public class Hotel
     }
     
     /**
-     *  Method ini digunakan untuk mengubah atau mengganti dari lokasi yang ada
+     *  Method ini digunakan untuk menentukan lokasi yang dijadikan tempat hotel berada
      *  @param lokasi
      */
     public void setLokasi(Lokasi lokasi){
@@ -75,13 +84,17 @@ public class Hotel
     }
     
     /**
-     *  Method ini digunakan untuk mengganti bintang yang sudah ada menjadi yang baru
+     *  Method ini digunakan untuk menentukan nilai bintang
      *  @param bintang
      */
     public void setBintang(int bintang){
         this.bintang = bintang;
     }
-    
+
+    /**
+     * Method ini digunakan untuk mencetak string pesan
+     *
+     */
     public String toString(){
         return "\nHotel" +
                 "\nNama Hotel : " + nama +

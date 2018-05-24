@@ -4,7 +4,7 @@ package jhotel;
  * JHotel
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.10
+ * @version 2018.05.24
  */
 public enum TipeKamar
 {

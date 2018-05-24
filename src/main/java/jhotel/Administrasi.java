@@ -3,7 +3,7 @@ package jhotel;
  * Kelas ini merupakan kelas yang digunakan untuk melakukan segala kegiatan administrasi yang ada di JHotel
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.10
+ * @version 2018.05.24
  */
 public class Administrasi
 {
@@ -19,7 +19,7 @@ public class Administrasi
     }
 
     /**
-     *  Method ini digunakan untuk menampilkan pesanan yang harus diproses, dan mengatur kamar yang dituju
+     *  Method ini digunakan untuk mengambil nilai pesanan yang harus diproses, dan mengatur kamar yang dituju
      *  @param pesan, kamar
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar){
@@ -37,24 +37,31 @@ public class Administrasi
 
     }
 
+    /**
+     * Method ini digunakan untuk melakukan pengambilan pesan
+     * @param pesan
+     * @param kamar
+     */
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Booked);
     }
 
+    /**
+     * Method ini digunakan untuk melepaskan kamar
+     * @param kamar
+     */
     public static void roomLepasPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Vacant);
     }
 
-
+    /**
+     * Method ini digunakan untuk melakukan pembatalan pesanan
+     * @param kamar
+     */
     public static void pesananDibatalkan(Room kamar)
     {
-
-        // kamar.getPesanan().setStatusSelesai(false);
-        // tidak bisa dilakukan karena pesan merupakan private object milik class Room
-
-
 
         Pesanan pesanTemp = DatabasePesanan.getPesananAktif(kamar);
         pesanTemp.setStatusSelesai(false);
@@ -65,6 +72,10 @@ public class Administrasi
         roomLepasPesanan(kamar);
     }
 
+    /**
+     * Method ini digunakan untuk menentukan dari pesanan selesai
+     * @param kamar
+     */
     public static void pesananSelesai(Room kamar)
     {
         Pesanan pesanTemp = DatabasePesanan.getPesananAktif(kamar);
@@ -76,6 +87,10 @@ public class Administrasi
         roomLepasPesanan(kamar);
     }
 
+    /**
+     * Method ini digunakan untuk melakukan pembatan pesan
+     * @param pesan
+     */
     public static void pesananDibatalkan(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
@@ -86,6 +101,10 @@ public class Administrasi
 //        pesan.setRoom(null);
     }
 
+    /**
+     * Method ini digunakan untuk melakukan penentuan Low Bandwidth
+     * @param pesan
+     */
     public static void pesananSelesai(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());

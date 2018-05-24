@@ -3,13 +3,11 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * Class ini digunakan untuk menampilkan/memodelkan suatu
- * bentuk pesanan yang ada baik dalam segi pelanggan yang ada
- * beserta status yang dimiliki, yang dalam hal ini merupakan biaya
- * jenis kamar yang ada, dan juga apakah masih menginap atau tidak
+ * Class ini digunakan untuk memodelkan pesanan yang dilakukan
+ * ataupun dibuat
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.10
+ * @version 2018.05.24
  */
 public class Pesanan
 {
@@ -38,13 +36,16 @@ public class Pesanan
         id = DatabasePesanan.getLastPesananID() + 1;
     }
 
+    /**
+     * Method ini digunakan untuk mengambil nilai id
+     * @return id
+     */
     public int getID(){
         return id;
     }
 
     /**
-     *  Method ini digunakan untuk menampilkan jumlah biaya yang ada yang sudah diset baik saat pertama kali masuk
-     *  ataupun saat mengalami perubaha dengan melakukan setBiaya
+     *  Method ini digunakan untuk mengambil nilai biaya
      *  @return biaya
      */
     public double getBiaya(){
@@ -52,7 +53,7 @@ public class Pesanan
     }
 
     /**
-     *  Method ini digunakan untuk menampilkan jumlah hari yang ada
+     *  Method ini digunakan untuk mengambil nilai jumlah hari yang ada
      *  @return jumlahHari
      */
     public double getJumlahHari(){
@@ -60,19 +61,25 @@ public class Pesanan
     }
 
     /**
-     *  Method ini digunakan untuk menampilkan daftar pelanggan yang ada
+     *  Method ini digunakan untuk mengambil nilai daftar pelanggan yang ada
      *  @return pelanggan
      */
     public Customer getPelanggan(){
         return pelanggan;
     }
 
+    /**
+     * Method ini digunakan untuk mengambil nilai status aktif dari pesanan
+     * apakah status aktif dalam keadaan true atau false
+     * @return isAktif
+     */
     public boolean getStatusAktif(){
         return isAktif;
     }
 
     /**
-     *  Method ini digunakan untuk menampilkan bahwa status yang ada saat ini merupakan diproses
+     *  Method ini digunakan untuk mengambil nilai status di proses apakah true
+     *  atau false
      *  @return isDiproses
      */
     public boolean getStatusDiproses(){
@@ -80,7 +87,8 @@ public class Pesanan
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan bahwa status yang ada saat ini merupakan telah selesai
+     *  Method ini digunakan untuk mengambil nilai status selesai, apakah true
+     *  atau false
      *  @return isSelesai
      */
     public boolean getStatusSelesai(){
@@ -88,7 +96,7 @@ public class Pesanan
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan mengenai kamar
+     *  Method ini digunakan untuk mengambil kamar yang ada
      *  @return kamar
      */
     public Room getRoom(){
@@ -96,19 +104,23 @@ public class Pesanan
     }
     
     /**
-     *  Method ini digunakan untuk menampilkan tanggal saat pesanan terjadi
+     *  Method ini digunakan untuk mengambil nilai tanggal saat pesanan terjadi
      *  @return tanggalPesan
      */
     public Date getTanggalPesan(){
         return tanggalPesan;
     }
 
+    /**
+     * method ini digunakan untuk menentukan nilai id
+     * @param id
+     */
     public void setId(int id){
         this.id = id;
     }
 
     /**
-     *  Method ini digunakan untuk mengubah sejumlah biaya yang ada sehingga menjadi biaya yang baru
+     *  Method ini digunakan untuk menentukan sejumlah biaya yang ada sehingga menjadi biaya yang baru
      *
      */
     public void setBiaya(){
@@ -116,7 +128,7 @@ public class Pesanan
     }
     
     /**
-     *  Method ini digunakan untuk mengubah jumlah hari yang sudah ada
+     *  Method ini digunakan untuk menentukan jumlah hari
      *  @param jumlahHari
      */
     public void setJumlahHari(double jumlahHari){
@@ -124,19 +136,23 @@ public class Pesanan
     }
     
     /**
-     *  Method ini digunakan untuk mengubah sejumlah pelanggan yang ada menjadi jumlah pelanggan yang terbaru
+     *  Method ini digunakan untuk menentukan pelanggan
      *  @param pelanggan
      */
     public void setPelanggan(Customer pelanggan){
         this.pelanggan = pelanggan;
     }
 
+    /**
+     * Method ini digunakan untuk menset keadaan status aktif
+     * @param aktif
+     */
     public void setStatusAktif(boolean aktif){
         isAktif = aktif;
     }
 
     /**
-     *  Method ini digunakan untuk mengubah status yang ada menjadi diproses dan kondisi selesai menjadi tidak benar
+     *  Method ini digunakan untuk memberikan keadaan status diproses
      *  @param isDiproses
      */
     public void setStatusDiproses(boolean isDiproses){
@@ -144,7 +160,7 @@ public class Pesanan
     }
     
     /**
-     *  Method ini digunakan untuk mengubah status yang ada menjadi selesai
+     *  Method ini digunakan untuk menentukan keadaan dari status selesai
      *  @param isSelesai
      */
     public void setStatusSelesai(boolean isSelesai){
@@ -152,17 +168,25 @@ public class Pesanan
     }
     
     /**
-     *  Method ini digunakan untuk mengubah status yang ada menjadi selesai
+     *  Method ini digunakan untuk menentukan kamar
      *  @param 
      */
     public void setRoom(Room kamar){
         this.kamar = kamar;
     }
-    
+
+    /**
+     * Method ini digunakan untuk memberikan tanggal pesanan dibuat
+     * @param tanggalPesan
+     */
     public void setTanggalPesan(Date tanggalPesan){
         this.tanggalPesan = tanggalPesan;
     }
-    
+
+    /**
+     * Method ini digunakan untuk menampilkan string kelas Pesanan
+     *
+     */
     public String toString(){
         String final_status = "Kosong";
         

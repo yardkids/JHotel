@@ -1,10 +1,10 @@
 package jhotel;
 
 /**
- * Write a description of class PremiumRoom here.
+ * Kelas ini digunakan untuk memodelkan tipe kamar premium
  *
  * @author Anggi Harumanto - 1506673744
- * @version 2018.03.15
+ * @version 2018.05.24
  */
 public class PremiumRoom extends Room
 {
@@ -19,15 +19,29 @@ public class PremiumRoom extends Room
         // initialise instance variables
         super(hotel, nomor_kamar);
     }
-    
+
+    /**
+     * Method ini digunakan untuk mengambil nilai dari Tipe Kamar
+     * @return TIPE_KAMAR
+     */
     public TipeKamar getTipeKamar(){
         return TIPE_KAMAR;
     }
-    
+
+    /**
+     * Method ini digunakan untuk mengambil nilai dari diskon yang ditentukan
+     * @return DISCOUNT
+     */
     public double getDiscount(){
         return DISCOUNT;
     }
-    
+
+    /**
+     * Method ini digunakan untuk menentukan nilai dari daily tariff
+     * yang mana merupakan hasil dari nilai tariff yang ditetapkan dikali
+     * dengan diskon
+     * @param dailytariff
+     */
     public void setDailyTariff(double dailytariff){
         dailyTariff = dailytariff * DISCOUNT;
     }
